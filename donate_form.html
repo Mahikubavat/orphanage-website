@@ -1,0 +1,156 @@
+<html>
+<head>
+    <title>donate form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    @media screen and (max-width: 600px) {
+        /* Reduce form top margin and padding for smaller screens */
+        .container {
+            margin-top: 40px;
+            padding: 20px;
+        }
+    
+        /* Increase font size for better readability */
+        body {
+            font-size: 16px;
+        }
+    
+        /* Make buttons larger for touch screens */
+        .btn {
+            padding: 18px;
+            font-size: 18px;
+        }
+    
+        /* Adjust input fields for better spacing */
+        input[type=text], input[type=email], select, textarea {
+            padding: 14px;
+            font-size: 16px;
+        }
+    }
+            body, html {
+                height: 100%;
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+    
+            * {
+                box-sizing: border-box;
+            }
+    
+            /* Blurred Background */
+            .bg-img {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url("https://weareworldchallenge.com/wp-content/uploads/2024/01/Orphanages.jpg") ;
+                z-index: -1;
+            }
+    
+            /* Dark overlay with blur effect */
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(8px);
+                background: rgba(0, 0, 0, 0.5);
+                z-index: -1;
+            }
+    
+            /* Feedback Heading - Fixed on Top */
+            .feedback-heading {
+                display: none;
+            }
+    
+            /* Centered Form */
+            .container {
+                width: 100%;
+                max-width: 500px;
+                background: rgba(255, 255, 255, 0.9);
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+                text-align: left;
+                margin-top: 80px; /* Push form down so it doesn't overlap the heading */
+            }
+    
+            /* Form Input Fields */
+            input[type=text], input[type=email], select, textarea {
+                width: 100%;
+                padding: 12px;
+                margin-top: 6px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background: #f8f8f8;
+            }
+    
+            input:focus, textarea:focus {
+                background-color: #e8e8e8;
+                outline: none;
+            }
+    
+            /* Button Styling */
+            .btn {
+                background-color: #04AA6D;
+                color: white;
+                padding: 15px;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                border-radius: 5px;
+                font-size: 16px;
+                margin-top: 10px;
+            }
+    
+            .btn:hover {
+                opacity: 0.9;
+            }
+    
+        </style>
+</head>
+<body>
+<div class="bg-img"></div>
+    <div class="overlay"></div>
+    <div class="container">
+        <form action="donate_page.html" method="get">
+            <h3>Fill Your Details First:</h3>
+            
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" placeholder="Enter First Name" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter Last Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+
+            <fieldset>
+                <legend><h3>Do you want to donate the money?</h3></legend>
+                <input type="radio" id="yes" name="reply" value="YES" required>
+                <label for="yes">YES</label>
+                <input type="radio" id="no" name="reply" value="NO">
+                <label for="no">NO</label>
+            </fieldset>
+            <h3>Give Your Suggestions Here For Orphanage:</h3>
+            <textarea name="message" rows="5" placeholder="Write your suggestions here..."></textarea><br>
+           <br><label for="reply"><b>Rate Our Work:</b></label>
+            <select id="reply" name="reply" required>
+                <option value="Excellent">EXCELLENT</option>
+                <option value="good">GOOD</option>
+                <option value="bad">BAD</option>
+            </select>
+            <input type="reset" value="Reset" class="btn">
+            <input type="submit" value="Submit" class="btn">
+        </form>
+    </div>
+</body>
+</html>    
